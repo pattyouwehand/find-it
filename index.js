@@ -36,11 +36,10 @@ for(let i=0; i<images.length; i++){
     main.appendChild(img)
 
     img.onclick = function(){
-        //console.log("IMAGE:", i)        
-        //addToFoundItems(img[i])
         addToFoundItems(images[i])
+        displayInFooter()
+        
     }
-    //console.log(images[i])
 }
 
 getRandomInt()
@@ -50,22 +49,24 @@ const foundItems = [];
 function addToFoundItems(image){
     if(!foundItems.includes(image)){
         foundItems.push(image)
-        console.log(foundItems)
         return foundItems
     }    
     return false 
 }
-//console.log(foundItems)
-//addToFoundItems(images[0])
-//console.log(foundItems)
-
-
-
-addToFoundItems()
 
 
 function displayInFooter(){
-    const foundItemsSection = document.getElementById("foundItems");
-    foundItemsSection.innerHTML = "";
+    const footer = document.getElementById("foundItems");
+    footer.innerHTML = "";
 
+    for(let i=0; i<foundItems.length; i++){
+        const image = foundItems[i];
+        const images = document.createElement('img');
+        images.alt = foundItems[i].name;
+        images.scr = foundItems[i].scr;
+        images.height = (100 + 'px');
+        images.width = (100 + 'px');
+        addToFoundItems.appendChild(newImages)
+    }
 }
+displayInFooter()
