@@ -25,7 +25,7 @@ function getRandomInt(max){
     return (Math.floor(Math.random() * max))
 };
 
-for(i=0; i<images.length; i++){
+for(let i=0; i<images.length; i++){
     const main = document.getElementById("searchField");
     const img = document.createElement("img");
     img.alt = images[i].name;
@@ -36,9 +36,11 @@ for(i=0; i<images.length; i++){
     main.appendChild(img)
 
     img.onclick = function(){
-        addToFoundItems(images)
+        //console.log("IMAGE:", i)        
+        //addToFoundItems(img[i])
+        addToFoundItems(images[i])
     }
-    
+    //console.log(images[i])
 }
 
 getRandomInt()
@@ -46,9 +48,24 @@ getRandomInt()
 const foundItems = [];
 
 function addToFoundItems(image){
-    if(foundItems.length === 0){
+    if(!foundItems.includes(image)){
         foundItems.push(image)
-    }      
+        console.log(foundItems)
+        return foundItems
+    }    
+    return false 
 }
+//console.log(foundItems)
+//addToFoundItems(images[0])
+//console.log(foundItems)
 
-//addToFoundItems()
+
+
+addToFoundItems()
+
+
+function displayInFooter(){
+    const foundItemsSection = document.getElementById("foundItems");
+    foundItemsSection.innerHTML = "";
+
+}
