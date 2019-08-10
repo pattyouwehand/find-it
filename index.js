@@ -1,22 +1,22 @@
 const images = [
     {
-        name: "waving-wally",
+        name: "waving",
         src: "img/waving-wally.jpg"
     },
     {
-        name: "fake-wally",
+        name: "fake",
         src: "img/fake-wally.jpg"
     },
     {
-        name: "invisable-wally",
+        name: "invisable",
         src: "img/invisable-wally.jpg"
     },
     {
-        name: "weird-wally",
+        name: "weird",
         src: "img/weird-wally.jpg"
     },
     {
-        name: "transgender-wally",
+        name: "transgender",
         src: "img/transgender-wally.jpg"
     },
 ]
@@ -44,6 +44,11 @@ for(let i=0; i<images.length; i++){
 
 getRandomInt()
 
+window.addEventListener("DOMContentLoaded", function() {
+    findAndAssignObjects()
+
+}, false);
+
 const foundItems = [];
 
 function addToFoundItems(image){
@@ -61,12 +66,10 @@ function displayInFooter(){
 
     for(let i=0; i<foundItems.length; i++){
         const image = foundItems[i];
-        const images = document.createElement('img');
-        images.alt = foundItems[i].name;
-        images.scr = foundItems[i].scr;
-        images.height = (100 + 'px');
-        images.width = (100 + 'px');
-        addToFoundItems.appendChild(newImages)
+        const img = document.createElement('img');
+        img.alt = image.name
+        img.scr = image.src
+        footer.appendChild(img)
     }
 }
 displayInFooter()
