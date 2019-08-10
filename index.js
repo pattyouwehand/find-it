@@ -1,23 +1,23 @@
 const images = [
     {
         name: "waving",
-        src: "img/waving-wally.jpg"
+        src: "img/waving-wally.png"
     },
     {
         name: "fake",
-        src: "img/fake-wally.jpg"
+        src: "img/fake-wally.png"
     },
     {
         name: "invisable",
-        src: "img/invisable-wally.jpg"
+        src: "img/invisable-wally.png"
     },
     {
         name: "weird",
-        src: "img/weird-wally.jpg"
+        src: "img/weird-wally.png"
     },
     {
         name: "transgender",
-        src: "img/transgender-wally.jpg"
+        src: "img/transgender-wally.png"
     },
 ]
 
@@ -30,7 +30,7 @@ for(let i=0; i<images.length; i++){
     const img = document.createElement("img");
     img.alt = images[i].name;
     img.src = images[i].src;
-    img.setAttribute("style", "height: 30px; position: absolute; bottom: absolute; left: absolute");
+    img.setAttribute("style", "height: 80px; position: absolute; bottom: absolute; left: absolute");
     img.style.bottom = getRandomInt(30).toString() + 'rem';
     img.style.left = getRandomInt(60).toString() + 'rem';
     main.appendChild(img)

@@ -1,5 +1,8 @@
 #background{
     width: 100%;
+    height: auto;
+    display: flexbox;
+    justify-content: center;
 }
 
 #main{
@@ -7,4 +10,5 @@
     height: 80vh;
     position: relative;
 }
+
 
