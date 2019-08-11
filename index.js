@@ -44,10 +44,7 @@ for(let i=0; i<images.length; i++){
 
 getRandomInt()
 
-window.addEventListener("DOMContentLoaded", function() {
-    findAndAssignObjects()
 
-}, false);
 
 const foundItems = [];
 
@@ -67,9 +64,11 @@ function displayInFooter(){
     for(let i=0; i<foundItems.length; i++){
         const image = foundItems[i];
         const img = document.createElement('img');
-        img.alt = image.name
+        img.alt = `${image.name} Wally`
+        //img.alt.style.font = "Playfair Display 14px, serif";
         img.scr = image.src
         footer.appendChild(img)
+            console.log(img)
+
     }
 }
-displayInFooter()
